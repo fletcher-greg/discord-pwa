@@ -1,7 +1,6 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
-import styled from "@emotion/styled";
 import { Link } from "react-router-dom";
 import Avatar from "../comps/Avatar";
 import Line from "../../decoration/Line";
@@ -18,8 +17,9 @@ const UserAvatar = props => (
     <Avatar {...props}></Avatar>
   </div>
 );
-/* const HoverIcon = () => (
+const HoverIcon = () => (
   <div
+    className="unique1237"
     css={css`
       width: 5px;
       height: 20px;
@@ -29,24 +29,8 @@ const UserAvatar = props => (
       top: 20px;
     `}
   ></div>
-); */
-const HoverIcon = styled.div`
-  width: 5px;
-  height: 20px;
-  background: white;
-  position: absolute;
-  left: 0;
-  top: 20px;
-`;
-const Wrapper = styled.div`
-  width: 100%;
-  position: relative;
-  display: grid;
-  place-items: center;
-  &:hover ${HoverIcon} {
-    background: blue;
-  }
-`;
+);
+/* const Wrapper = () => <div ></div> */
 const ServerAvatars = () => {
   return (
     <div
@@ -58,11 +42,20 @@ const ServerAvatars = () => {
       `}
     >
       {testArr.map(person => (
-        <Wrapper>
-          >
+        <div
+          css={css`
+            width: 100%;
+            position: relative;
+            display: grid;
+            place-items: center;
+            &:hover .unique1237 {
+              background: blue;
+            }
+          `}
+        >
           <HoverIcon />
           <Avatar text={person} />
-        </Wrapper>
+        </div>
       ))}
     </div>
   );
