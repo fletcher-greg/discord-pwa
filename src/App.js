@@ -43,6 +43,12 @@ function App() {
             <Route path="/library">
               <Library />
             </Route>
+            <Route path="/friends">
+              <Library />
+            </Route>
+            <Route path="/nitro">
+              <Library />
+            </Route>
           </Switch>
         </UserContext.Provider>
       </Router>

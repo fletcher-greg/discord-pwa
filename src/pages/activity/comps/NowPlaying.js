@@ -2,7 +2,7 @@
 import React from "react";
 import { css, jsx } from "@emotion/core";
 const bg = css`
-  background: #101935;
+  background: #202225;
   width: 300px;
   height: 200px;
   border-radius: 10px;

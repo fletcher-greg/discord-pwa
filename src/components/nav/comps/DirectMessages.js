@@ -1,20 +1,28 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
-import worParsing from "../../../funcs/wordParsing";
-let testArr = [1, 2, 3, 4, 5, 7];
+import Cross from "./Union.svg";
+import wordParsing from "../../../funcs/wordParsing";
+let testArr = [
+  "Fleur",
+  "Wesley",
+  "Billy",
+  "Nick Bob Lando Rey",
+  "Nolan",
+  "John",
+  "Mal"
+];
 const Avatar = () => {
   return (
     <div
       css={css`
-        width: 60px;
-        height: 60px;
+        width: 45px;
+        height: 45px;
         background: #393c43;
         border-radius: 50%;
         display: grid;
         place-items: center;
         font-weight: 600;
-        margin-bottom: 1em;
 
         cursor: pointer;
         &:hover {
@@ -23,11 +31,53 @@ const Avatar = () => {
     ></div>
   );
 };
+const Name = ({ text }) => {
+  const parsedText = wordParsing(text, 2);
+  return (
+    <p
+      css={css`
+        margin: 0;
+        padding: 0;
+        align-self: center;
+        margin-left: 1em;
+        width: 50%;
+        font-size: 1rem;
+      `}
+    >
+      {parsedText}
+    </p>
+  );
+};
+const Image = () => (
+  <img
+    className="unique14891"
+    css={css`
+      height: 15px;
+      align-self: center;
+      display: none;
+    `}
+    src={Cross}
+  />
+);
 const Friend = () => {
   return (
     <>
       {testArr.map(person => (
-        <Avatar />
+        <div
+          css={css`
+            display: flex;
+            flex-direction: row;
+            margin-bottom: 1em;
+            cursor: pointer;
+            &:hover .unique14891 {
+              display: block;
+            }
+          `}
+        >
+          <Avatar />
+          <Name text={person} />
+          <Image />
+        </div>
       ))}
     </>
   );

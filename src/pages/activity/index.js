@@ -5,7 +5,7 @@ import QLauncher from "./comps/QLauncher";
 import NowPlaying from "./comps/NowPlaying";
 import GameUpdate from "./comps/GameUpdate";
 const mainStyle = css`
-  background: #3a3042;
+  background: #36393f;
   height: 100%;
   width: 100%;
 `;

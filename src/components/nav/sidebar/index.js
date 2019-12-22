@@ -45,7 +45,7 @@ const MainMenu = () => (
 
     <List page="Library" url="/library" />
 
-    <List page="Nitro" url="/Nitro" />
+    <List page="Nitro" url="/nitro" />
 
     <List page="Friends" url="/friends" />
   </ul>

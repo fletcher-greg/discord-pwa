@@ -75,7 +75,7 @@ export default () => (
       width: 300px;
       min-height: 100px;
       border-radius: 10px;
-      background: #231f1f;
+      background: #202225;
       transition: 0.25s ease-in-out;
       cursor: pointer;
       &:hover {

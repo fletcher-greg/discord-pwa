@@ -6,14 +6,20 @@ function GameBox({ text }) {
   return (
     <div
       css={css`
-        background: #2e294e;
+        background: #4f545c;
         height: 60px;
         width: 60px;
         border-radius: 10px;
         color: white;
       `}
     >
-      {text}
+      <p
+        css={css`
+          text-align: center;
+        `}
+      >
+        {text}
+      </p>
     </div>
   );
 }
