@@ -3,6 +3,7 @@ import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 //  LOCAL IMPORTS
 import SideBar from "./components/nav/sidebar";
+import Servers from "./components/nav/servers";
 import Login from "./pages/login";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -17,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <SideBar />
+        <Servers />
         <SideBar />
         <UserContext.Provider value={providerUser}>
           <Switch>
