@@ -1,5 +1,10 @@
+html,
+body {
+  font-family: "Nunito", sans-serif;
+}
 .App {
-  background: blanchedalmond;
   height: 100vh;
-  text-align: center;
+  display: grid;
+  color: white;
+  grid-template-columns: 100px 250px auto;
 }
