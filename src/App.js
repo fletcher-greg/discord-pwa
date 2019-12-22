@@ -2,7 +2,7 @@ import React, { useState, useMemo } from "react";
 import { Switch, BrowserRouter as Router, Route } from "react-router-dom";
 import "./App.css";
 //  LOCAL IMPORTS
-import Nav from "./components/nav";
+import SideBar from "./components/nav/sidebar";
 import Login from "./pages/login";
 import About from "./pages/about";
 import Contact from "./pages/contact";
@@ -17,8 +17,8 @@ function App() {
   return (
     <div className="App">
       <Router>
-        <Nav />
-        <Nav />
+        <SideBar />
+        <SideBar />
         <UserContext.Provider value={providerUser}>
           <Switch>
             <Route exact path="/">
