@@ -23,10 +23,11 @@ const HoverIcon = () => (
     css={css`
       width: 5px;
       height: 20px;
-      background: white;
+
       position: absolute;
       left: 0;
       top: 20px;
+      transition: background 0.2s ease-in-out;
     `}
   ></div>
 );
@@ -49,7 +50,8 @@ const ServerAvatars = () => {
             display: grid;
             place-items: center;
             &:hover .unique1237 {
-              background: blue;
+              background: white;
+              transition: background 0.3s ease-in-out;
             }
           `}
         >
