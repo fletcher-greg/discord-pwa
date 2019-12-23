@@ -59,7 +59,7 @@ const Image = () => (
     src={Cross}
   />
 );
-const Friend = () => {
+export const Friend = () => {
   return (
     <>
       {testArr.map(person => (
@@ -112,7 +112,7 @@ const Title = () => (
 );
 
 export default () => (
-  <div>
+  <div css={css``}>
     <Title />
     <Friend />
   </div>

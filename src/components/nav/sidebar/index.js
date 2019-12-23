@@ -4,7 +4,7 @@ import { css, jsx } from "@emotion/core";
 import { Link } from "react-router-dom";
 // LOCAL IMPORTS
 import DirectMessages from "../comps/DirectMessages";
-
+import BottomMenu from "../comps/BottomMenu";
 const NavLink = ({ url, page }) => (
   <Link
     css={css`
@@ -37,6 +37,7 @@ const MainMenu = () => (
     css={css`
       list-style-type: none;
       font-size: 1.2rem;
+
       margin: 0;
       padding: 0;
     `}
@@ -54,9 +55,12 @@ export default () => (
   <nav
     css={css`
       background: #2f3136;
+      display: grid;
+      grid-template-rows: 1fr 4fr auto;
     `}
   >
     <MainMenu />
     <DirectMessages />
+    <BottomMenu />
   </nav>
 );
