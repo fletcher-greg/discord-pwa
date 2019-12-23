@@ -12,7 +12,7 @@ export default () => {
         place-self: end;
       `}
     >
-      <Friend />
+      <Friend names={["User"]} />
     </div>
   );
 };

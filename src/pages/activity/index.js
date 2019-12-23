@@ -14,6 +14,7 @@ export default () => (
     <div>
       <h2
         css={css`
+          margin: 0;
           color: white;
           text-align: left;
           box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);

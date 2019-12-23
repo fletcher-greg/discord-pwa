@@ -3,6 +3,7 @@ body {
   font-family: "Nunito", sans-serif;
 }
 .App {
+  overflow: hidden;
   height: 100vh;
   display: grid;
   color: white;

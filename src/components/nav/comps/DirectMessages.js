@@ -59,10 +59,10 @@ const Image = () => (
     src={Cross}
   />
 );
-export const Friend = () => {
+export const Friend = ({ names = ["user"] }) => {
   return (
     <>
-      {testArr.map(person => (
+      {names.map(person => (
         <div
           css={css`
             display: flex;
@@ -114,6 +114,6 @@ const Title = () => (
 export default () => (
   <div css={css``}>
     <Title />
-    <Friend />
+    <Friend names={testArr} />
   </div>
 );

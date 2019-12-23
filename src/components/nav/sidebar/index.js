@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 // LOCAL IMPORTS
 import DirectMessages from "../comps/DirectMessages";
 import BottomMenu from "../comps/BottomMenu";
+import Find from "../find";
 const NavLink = ({ url, page }) => (
   <Link
     css={css`
@@ -37,7 +38,6 @@ const MainMenu = () => (
     css={css`
       list-style-type: none;
       font-size: 1.2rem;
-
       margin: 0;
       padding: 0;
     `}
@@ -56,9 +56,10 @@ export default () => (
     css={css`
       background: #2f3136;
       display: grid;
-      grid-template-rows: 1fr 4fr auto;
+      grid-template-rows: auto 1fr 3.5fr auto;
     `}
   >
+    <Find />
     <MainMenu />
     <DirectMessages />
     <BottomMenu />
