@@ -9,15 +9,19 @@ const mainStyle = css`
   height: 100%;
   width: 100%;
 `;
+const topBarStyle = css`
+  box-shadow: 0 1px 0 rgba(4, 4, 5, 0.2), 0 1.5px 0 rgba(6, 6, 7, 0.05),
+    0 2px 0 rgba(4, 4, 5, 0.05);
+  height: 45px;
+`;
 export default () => (
   <div css={mainStyle}>
-    <div>
+    <div css={topBarStyle}>
       <h2
         css={css`
           margin: 0;
           color: white;
           text-align: left;
-          box-shadow: 0px 1px 5px 1px rgba(0, 0, 0, 0.75);
         `}
       >
         Activity
