@@ -9,6 +9,7 @@ import About from "./pages/about";
 import Contact from "./pages/contact";
 import Activity from "./pages/activity";
 import Library from "./pages/library";
+import Friends from "./pages/friends";
 import Memo from "./components/memo";
 // user context
 import { UserContext } from "./util/UserContext";
@@ -44,7 +45,7 @@ function App() {
               <Library />
             </Route>
             <Route path="/friends">
-              <Library />
+              <Friends />
             </Route>
             <Route path="/nitro">
               <Library />
