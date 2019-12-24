@@ -12,9 +12,14 @@ const pageStyle = css`
 
 const FriendsWrapper = () => {
   const [toggle, setToggle] = useState(true);
-  return freunden.map(friend => (
-    <FriendList onClick={() => setToggle(tog => !tog)} name={friend} />
-  ));
+
+  return (
+    <div>
+      {freunden.map(friend => (
+        <FriendList onClick={() => setToggle(tog => !tog)} name={friend} />
+      ))}
+    </div>
+  );
 };
 
 export default () => {
