@@ -38,8 +38,8 @@ export default props => {
   const [tog, setTog] = useState(true);
   const test = useSpring({
     config: { duration: 400 },
-    from: { height: 0 },
-    to: { height: tog ? 80 : 0 }
+    from: { height: 0, opacity: 0 },
+    to: { height: tog ? 80 : 0, opacity: tog ? 1 : 0 }
   });
   return (
     <animated.div
