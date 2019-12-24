@@ -37,6 +37,8 @@ const OptBtn = ({ name, setTog }) => {
     padding: 0.3em 0.6em;
     cursor: pointer;
     font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
     border-radius: 4px;
   `;
   return (
