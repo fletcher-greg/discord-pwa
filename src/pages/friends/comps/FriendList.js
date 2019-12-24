@@ -1,7 +1,8 @@
 /** @jsx jsx */
 import React from "react";
 import { css, jsx } from "@emotion/core";
-
+// LOCAL IMPORTS
+import Avatar from "../../../components/nav/comps/Avatar";
 export default ({ name }) => (
   <div
     css={css`
@@ -10,7 +11,7 @@ export default ({ name }) => (
       justify-content: space-between;
     `}
   >
-    <p>{name}</p>
+    <Avatar text={name} />
     <p>Offline</p>
   </div>
 );

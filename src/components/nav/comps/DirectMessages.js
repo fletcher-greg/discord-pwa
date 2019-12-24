@@ -12,7 +12,7 @@ let testArr = [
   "John",
   "Mal"
 ];
-const Avatar = () => {
+export const Avatar = () => {
   return (
     <div
       css={css`
@@ -31,7 +31,7 @@ const Avatar = () => {
     ></div>
   );
 };
-const Name = ({ text }) => {
+export const Name = ({ text }) => {
   const parsedText = wordParsing(text, 2);
   return (
     <p
