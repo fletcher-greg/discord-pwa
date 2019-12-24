@@ -23,6 +23,7 @@ export const Avatar = () => {
         display: grid;
         place-items: center;
         font-weight: 600;
+        margin-left: 0.9em;
 
         cursor: pointer;
         &:hover {
