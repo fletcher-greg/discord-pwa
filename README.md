@@ -9,3 +9,4 @@
 - [x] create sidebar
 - [ ] create messages
 - [ ] create servers pages
+- [ ] settings set up (overlay useTransition)
