@@ -1,7 +1,7 @@
 /** @jsx jsx */
 import React, { useState } from "react";
 import { css, jsx } from "@emotion/core";
-import { useSpring, animated } from "react-spring";
+// import { useSpring, animated } from "react-spring";
 // LOCAL IMPORTS
 import { Avatar, Name } from "../../../components/nav/comps/DirectMessages";
 const fDataStyle = css`
@@ -35,22 +35,16 @@ const MutualServers = () => (
   </div>
 );
 export default props => {
-  const [tog, setTog] = useState(true);
-  const test = useSpring({
-    config: { duration: 400 },
-    from: { height: 0, opacity: 0 },
-    to: { height: tog ? 80 : 0, opacity: tog ? 1 : 0 }
-  });
   return (
-    <animated.div
-      onClick={() => setTog(t => !t)}
-      style={test}
+    <div
+      // onClick={() => setTog(t => !t)}
+
       css={css`
         display: flex;
         flex-direction: row;
 
         border-bottom: 1px solid #2f3136;
-        /* height: 62px; */
+
         cursor: pointer;
         &:hover {
           background-color: #393c43;
@@ -61,6 +55,6 @@ export default props => {
       <FriendData {...props} />
       <Status />
       <MutualServers />
-    </animated.div>
+    </div>
   );
 };
