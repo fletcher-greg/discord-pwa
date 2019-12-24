@@ -74,13 +74,34 @@ const Name = ({ text }) => {
         margin: 0;
         padding: 0;
         align-self: center;
-        margin-left: 1em;
+        margin-left: 0.4em;
         width: 50%;
         font-size: 1rem;
+        font-weight: 700;
       `}
     >
       {text}
     </p>
+  );
+};
+const idStyle = css`
+  color: grey;
+  padding: 0;
+  margin: 0;
+  margin-left: 12px;
+  font-size: 0.7rem;
+`;
+const ID = ({ _id }) => <p css={idStyle}>#{_id}</p>;
+const UserMeta = () => {
+  const compStyle = css`
+    display: flex;
+    flex-direction: column;
+  `;
+  return (
+    <div css={compStyle}>
+      <Name text="User" />
+      <ID _id={1234} />
+    </div>
   );
 };
 
@@ -91,16 +112,16 @@ const Friend = () => {
         css={css`
           display: flex;
           flex-direction: row;
-          margin-bottom: 1em;
           align-items: center;
           cursor: pointer;
+          height: 100%;
           &:hover .unique14891 {
             display: block;
           }
         `}
       >
         <Avatar />
-        <Name text="User" />
+        <UserMeta />
         <HeadSet />
         <MicOn />
       </div>
