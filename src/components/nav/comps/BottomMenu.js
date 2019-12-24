@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from "react";
+import React, { useState } from "react";
 import { css, jsx } from "@emotion/core";
 
 // import HSet from "../assets/headset.svg";
@@ -58,6 +58,7 @@ export const Avatar = () => {
         place-items: center;
         font-weight: 600;
         margin-left: 0.9em;
+        margin-right: 8px;
 
         cursor: pointer;
         &:hover {
@@ -73,10 +74,9 @@ const Name = ({ text }) => {
       css={css`
         margin: 0;
         padding: 0;
-        align-self: center;
-        margin-left: 0.4em;
+
         width: 50%;
-        font-size: 1rem;
+        font-size: 0.9rem;
         font-weight: 700;
       `}
     >
@@ -88,7 +88,7 @@ const idStyle = css`
   color: grey;
   padding: 0;
   margin: 0;
-  margin-left: 12px;
+
   font-size: 0.7rem;
 `;
 const ID = ({ _id }) => <p css={idStyle}>#{_id}</p>;
@@ -96,11 +96,43 @@ const UserMeta = () => {
   const compStyle = css`
     display: flex;
     flex-direction: column;
+    flex-grow: 1;
+    /* justify-content: flex-start; */
   `;
   return (
     <div css={compStyle}>
-      <Name text="User" />
+      <Name text="user" />
       <ID _id={1234} />
+    </div>
+  );
+};
+
+const Icons = () => {
+  const compStyle = css`
+    display: flex;
+    flex-direction: row;
+    flex-grow: 1;
+  `;
+  const IconBtn = ({ children }) => {
+    const compStyle = css`
+      border: none;
+      outline: none;
+      background: none;
+      margin: 0;
+      padding: 0;
+      background: 0;
+      cursor: pointer;
+    `;
+    return <button css={compStyle}>{children}</button>;
+  };
+  const [mute, setMute] = useState(false);
+  return (
+    <div css={compStyle}>
+      <IconBtn>
+        <HeadSet />
+      </IconBtn>
+
+      <IconBtn setMute={setMute}>{mute ? <MicOff /> : <MicOn />}</IconBtn>
     </div>
   );
 };
@@ -113,7 +145,6 @@ const Friend = () => {
           display: flex;
           flex-direction: row;
           align-items: center;
-          cursor: pointer;
           height: 100%;
           &:hover .unique14891 {
             display: block;
@@ -122,8 +153,7 @@ const Friend = () => {
       >
         <Avatar />
         <UserMeta />
-        <HeadSet />
-        <MicOn />
+        <Icons />
       </div>
     </>
   );
