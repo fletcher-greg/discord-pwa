@@ -19,7 +19,7 @@ const titleStyle = css`
 `;
 
 const btnWrapper = css`
-  width: 250px;
+  width: 400px;
 
   display: flex;
   flex-direction: row;
@@ -53,7 +53,30 @@ const OptBtn = ({ name, setTog }) => {
     </button>
   );
 };
-const btns = ["Online", "all", "pending", "blocked"];
+
+const AddFriend = () => {
+  const [on, setOn] = useState(true);
+  const addFStyle = css`
+    margin: 0;
+    padding: 0;
+    background: ${on ? "#43b581" : "#38524c"};
+    outline: none;
+    border: none;
+    color: ${on ? "white" : "#43b581"};
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    font-weight: 600;
+    font-size: 1rem;
+    border-radius: 4px;
+  `;
+  return (
+    <button onClick={() => setOn(t => !t)} css={addFStyle}>
+      Add Friend
+    </button>
+  );
+};
+const btns = ["Online", "All", "Pending", "Blocked"];
 export default ({ page, setTog }) => (
   <div css={topBarStyle}>
     <div
@@ -67,6 +90,7 @@ export default ({ page, setTog }) => (
       {btns.map(name => (
         <OptBtn setTog={setTog} name={name} />
       ))}
+      <AddFriend />
     </div>
   </div>
 );
