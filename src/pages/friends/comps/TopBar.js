@@ -1,5 +1,5 @@
 /** @jsx jsx */
-import React from "react";
+import React, { useState } from "react";
 import { css, jsx } from "@emotion/core";
 
 const topBarStyle = css`
@@ -18,18 +18,6 @@ const titleStyle = css`
   text-align: center;
 `;
 
-const btnStyle = css`
-  margin: 0;
-  padding: 0;
-  background: #3e4249;
-  outline: none;
-  border: none;
-  color: white;
-  padding: 0.3em 0.6em;
-  cursor: pointer;
-  font-family: "Nunito", sans-serif;
-  border-radius: 4px;
-`;
 const btnWrapper = css`
   width: 250px;
 
@@ -37,11 +25,32 @@ const btnWrapper = css`
   flex-direction: row;
   justify-content: space-evenly;
 `;
-const OptBtn = ({ name, setTog }) => (
-  <button css={btnStyle} onClick={() => setTog(t => !t)}>
-    {name}
-  </button>
-);
+const OptBtn = ({ name, setTog }) => {
+  const [on, setOn] = useState(false);
+  const btnStyle = css`
+    margin: 0;
+    padding: 0;
+    background: ${on ? "#3e4249" : "none"};
+    outline: none;
+    border: none;
+    color: white;
+    padding: 0.3em 0.6em;
+    cursor: pointer;
+    font-family: "Nunito", sans-serif;
+    border-radius: 4px;
+  `;
+  return (
+    <button
+      css={btnStyle}
+      onClick={() => {
+        setOn(s => !s);
+        setTog(t => !t);
+      }}
+    >
+      {name}
+    </button>
+  );
+};
 const btns = ["Online", "all", "pending", "blocked"];
 export default ({ page, setTog }) => (
   <div css={topBarStyle}>
