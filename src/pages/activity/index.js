@@ -20,7 +20,10 @@ const Content = () => {
     margin: 0 auto;
   `;
   const rightCol = css``;
-  const leftCol = css``;
+  const leftCol = css`
+    display: grid;
+    grid-template-columns: auto auto;
+  `;
 
   let news = [
     {
@@ -60,9 +63,16 @@ const Content = () => {
   return (
     <div css={contentstyle}>
       <div css={leftCol}>
-        {news.map(card => (
-          <GameUpdate {...card} />
-        ))}
+        <div>
+          {news.map(card => (
+            <GameUpdate {...card} />
+          ))}
+        </div>
+        <div>
+          {news.map(card => (
+            <GameUpdate {...card} />
+          ))}
+        </div>
       </div>
       <div css={rightCol}>
         <QLauncher />
