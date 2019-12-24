@@ -11,11 +11,24 @@ const mainStyle = css`
   width: 100%;
 `;
 
+const Content = () => {
+  const contentstyle = css`
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: 100%;
+  `;
+  return (
+    <div>
+      <GameUpdate />
+      <QLauncher />
+      <NowPlaying />
+    </div>
+  );
+};
+
 export default () => (
   <div css={mainStyle}>
     <TopBar page="activity" />
-    <GameUpdate />
-    <QLauncher />
-    <NowPlaying />
+    <Content />
   </div>
 );
