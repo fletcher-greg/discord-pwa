@@ -10,3 +10,4 @@
 - [ ] create messages
 - [ ] create servers pages
 - [ ] settings set up (overlay useTransition)
+- [ ] messages page
