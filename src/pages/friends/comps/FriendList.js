@@ -16,12 +16,20 @@ const FriendData = ({ name }) => (
   </div>
 );
 const Status = () => (
-  <div>
+  <div
+    css={css`
+      width: 250px;
+    `}
+  >
     <p>Offline</p>
   </div>
 );
 const MutualServers = () => (
-  <div>
+  <div
+    css={css`
+      width: 250px;
+    `}
+  >
     <Avatar />
   </div>
 );
@@ -30,7 +38,7 @@ export default props => (
     css={css`
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
+
       border-bottom: 1px solid #2f3136;
       height: 62px;
       cursor: pointer;
