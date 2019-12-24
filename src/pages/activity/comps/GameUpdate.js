@@ -69,7 +69,7 @@ const MetaData = ({ time, url }) => {
     </div>
   );
 };
-export default () => (
+export default ({ time, url, sub, title }) => (
   <div
     css={css`
       width: 300px;
@@ -85,11 +85,11 @@ export default () => (
       }
     `}
   >
-    <Header text="Hook line and inker" />
-    <Subtitle text="Can you believe it? Winter's Feat is almost here! After another great year for Don't Starve Together, let" />
+    <Header text={title} />
+    <Subtitle text={sub} />
     <div>
       <Border />
     </div>
-    <MetaData time="a month ago" url="steamcommunity.com" />
+    <MetaData time={time} url={url} />
   </div>
 );

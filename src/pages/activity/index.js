@@ -24,7 +24,7 @@ const Content = () => {
 
   let news = [
     {
-      title: "Looking good!",
+      title: "Can you believe it?",
       sub:
         "Coming to Steam, Xbox One and Wegame next week on December 12th, we will be bringing Hook, Line and Inker to the live servers along with this year's Winter's Feast event.",
       time: "A week ago",
@@ -50,7 +50,7 @@ const Content = () => {
       url: "steamcommunity"
     },
     {
-      title: "Loot boxes",
+      title: "Loot boxes...rip",
       sub:
         "We've given in.  The game is full of loot boxes.  It's pay to win, or it's not worth it.  Maybe it's not worth it...",
       time: "1 second ago",
@@ -61,7 +61,7 @@ const Content = () => {
     <div css={contentstyle}>
       <div css={leftCol}>
         {news.map(card => (
-          <GameUpdate />
+          <GameUpdate {...card} />
         ))}
       </div>
       <div css={rightCol}>
