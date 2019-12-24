@@ -13,15 +13,20 @@ const mainStyle = css`
 
 const Content = () => {
   const contentstyle = css`
+    height: 100%;
     display: grid;
     grid-template-columns: 2fr 1fr;
-    height: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
   `;
+  const rightCol = css``;
   return (
-    <div>
+    <div css={contentstyle}>
       <GameUpdate />
-      <QLauncher />
-      <NowPlaying />
+      <div css={rightCol}>
+        <QLauncher />
+        <NowPlaying />
+      </div>
     </div>
   );
 };
