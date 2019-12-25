@@ -49,6 +49,26 @@ const MicOn = () => (
     <path d="M0 0h24v24H0z" fill="none" />
   </svg>
 );
+
+const Settings = () => (
+  <svg
+    width="26"
+    height="26"
+    viewBox="0 0 26 26"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <path
+      fill-rule="evenodd"
+      clip-rule="evenodd"
+      d="M7.24 6.07692C7.4 5.61538 8.104 4.69231 9.64 4.69231L10.12 1H15.88L16.36 4.69231C16.84 4.69231 17.992 4.96923 18.76 6.07692L22.12 4.69231L25 9.30769L22.6 11.6154C22.92 12.0769 23.368 13.2769 22.6 14.3846L25 16.2308L22.12 21.3077L18.76 19.9231C18.44 20.3846 17.512 21.3077 16.36 21.3077L15.88 25H10.12L9.64 21.3077C9 21.3077 7.624 21.0308 7.24 19.9231L3.88 21.3077L1 16.6923L3.88 14.3846C3.56 13.9231 3.112 12.8154 3.88 12.0769L1 9.76923L3.88 4.69231L7.24 6.07692ZM13.48 17.6154C16.131 17.6154 18.28 15.549 18.28 13C18.28 10.451 16.131 8.38462 13.48 8.38462C10.829 8.38462 8.68 10.451 8.68 13C8.68 15.549 10.829 17.6154 13.48 17.6154Z"
+      fill="grey"
+      stroke="black"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    />
+  </svg>
+);
 export const Avatar = () => {
   return (
     <div
@@ -115,6 +135,7 @@ const Icons = () => {
     display: flex;
     flex-direction: row;
     flex-grow: 1;
+    justify-content: space-evenly;
   `;
   const IconBtn = ({ setMute, children }) => {
     const compStyle = css`
@@ -125,6 +146,8 @@ const Icons = () => {
       padding: 0;
       background: 0;
       cursor: pointer;
+      display: flex;
+      align-items: center;
     `;
     return (
       <button onClick={() => setMute && setMute(t => !t)} css={compStyle}>
@@ -135,11 +158,13 @@ const Icons = () => {
   const [mute, setMute] = useState(false);
   return (
     <div css={compStyle}>
+      <IconBtn setMute={setMute}>{mute ? <MicOff /> : <MicOn />}</IconBtn>
       <IconBtn>
         <HeadSet />
       </IconBtn>
-
-      <IconBtn setMute={setMute}>{mute ? <MicOff /> : <MicOn />}</IconBtn>
+      <IconBtn>
+        <Settings />
+      </IconBtn>
     </div>
   );
 };
